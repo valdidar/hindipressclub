@@ -204,8 +204,16 @@ pre {
     .article-card a{
         color: red;
     }
+ /* changed in mobile */ 
+    
     .container{
-        padding-top: 50%;
+        padding-top: 100%;
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav ul{
+        flex-direction: column;
     }
 }
 
