@@ -5,7 +5,7 @@ function scanAndDisplayImages() {
     const galleryContainer = document.getElementById('gallery-container');
   
     // Replace 'images/gallery' with the path to your image folder
-    const imagesFolderPath = './hindipressclub/images/gallery/';
+    const imagesFolderPath = './images/gallery/';
     // List of image file extensions you want to include (you can add more if needed)
     const imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
   
