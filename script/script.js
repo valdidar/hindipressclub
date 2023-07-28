@@ -1,5 +1,5 @@
 async function load() {
-    const response = await fetch('./data/articles.json');
+    const response = await fetch('./hindipressclub/data/articles.json');
     const json = await response.json();
     console.log(json);
 
