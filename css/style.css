@@ -169,5 +169,43 @@ pre {
     padding-top: 90px;
 }
 
-
+/* make it dynamic */
+@media(max-width: 768px){
+    .main{
+        flex-direction: column;
+    }
+    .main .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .right .weather-head{
+        padding: 0 5%;
+    }
+    .row{
+        font-size: 16px;
+    }
+    .left h2{
+        font-size: 30px;
+    }
+    .article-card h1{
+        font-size: 25px;
+    }
+    .article-card img{
+        height: 150px;
+    }
+    .article-card .article-card-overlay{
+        width: 90%;
+        margin: 4%;
+        margin-top: 1%;
+    }
+    .article-card a{
+        color: red;
+    }
+    .container{
+        padding-top: 50%;
+    }
+}
 
