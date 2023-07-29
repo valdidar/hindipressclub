@@ -203,9 +203,7 @@ pre {
     }
     .article-card a{
         color: red;
-    }
- /* changed in mobile */ 
-    
+    }    
     .container{
         padding-top: 100%;
     }
@@ -214,6 +212,27 @@ pre {
     }
     .nav ul{
         flex-direction: column;
+    }
+    .container::before{
+        background-image: url(../images/background_vertical.png);
+    }
+}
+@media(max-width: 550px){
+    /* adjust nav */
+    nav{
+        padding: 0 10px;
+    }
+    nav img{
+        height: 60px;
+    }
+    nav ul{
+        margin-right: 10px;
+    }
+    nav ul li{
+        margin: 0 5px;
+    }
+    nav ul li a{
+        font-size: 16px;
     }
 }
 
