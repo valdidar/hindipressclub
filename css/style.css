@@ -1,219 +1,113 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: algerian;
-    background-color: #fff;
-    color: #000;    
+/* make background black and make all text white*/
+body {
+  background-color: black;
 }
-a{
-    text-decoration: none;
-    color: #000;
+h1, h2, h3, h4, h5, h6, p, a, hr {
+  color: white;
 }
-nav img{
-    height: 80px;
+/* right and left part of the page  */
+.right {
+  padding-left: calc(50% - 64px);
+  width: 50vw;
+  font-size: 2vw;
+  line-height: 3vw;
 }
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    background-color: #EFDECA;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+.left  {
+  position: fixed;
+  top: 0;
+  padding-top: 15vw;
+  padding-bottom: 100vw;
+  left: calc(40px + 3vw);
+  width: 10vw;
+  font-size: .4vw;
+  line-height: .6vw;
+  will-change: transform;
 }
-nav ul{
-    display: flex;
-    list-style: none;
-    margin-right: 25px;
+/* make padding so that the first text appears in middle instead of top */
+.top-padding-article {
+  padding-top: 15vw;
 }
-nav ul li{
-    margin: 0 10px;
+.top-padding-article-left {
+  padding-top: 3vw;
 }
-nav ul li a{
-    font-size: 18px;
-    font-weight: 500;
+/* floating navbar with Articles and Cartoons */
+.nav {
+  position: fixed;
+  top: 0;
+  padding-top: 4vw;
+  display: flex;
+  padding-left: 16vw;
+  font-size: 2vw;
+  width: 100%;
+  background-color: black;
+  padding-bottom: 2vw;
 }
-.container{
-    margin: 0 auto;
-    padding-top: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.nava {
+  backdrop-filter: blur(1px);
 }
-/* add image as fixed background */
-.container::before{
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    opacity: 0.5;
+.nava a {
+  text-decoration: none;
+  margin-left: 20px;
 }
-.main{
-    /*  ----------------------------------------------------------------------*/
-    background-color: #A0522D;
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.nava-off {
+  opacity: 50%;
 }
-.main .left{
-    width: 75%;
+/* logo */
+.logo {
+  position: fixed;
+  top: 3vw;
+  left: 3vw;
+  filter: invert(100%);
+  width: 12vw;
 }
-.article-card{
-    width: 100%;
-    /*  ----------------------------------------------------------------------*/
-    background-color: #EFDECA;
-    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+/* css for cartoons page */
+.cartoons img, h3 {
+  width: 80%;
+  padding-left: 10%;
+  margin-top: 0px;
 }
-
-.article-card:hover{
-    transform: scale(1.04);
-    box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+/* wallmag article-box formating */
+.article-box img {
+  float: right;
+  width: 20%;
+  padding: 5%;
 }
-
-.article-card img{
-    width: 90%;
-    margin: 4%;
-    margin-top: 2%;
-    margin-bottom: 0;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-
+/* making things hidden */
+.hidden {
+  display: none;
 }
-.article-card h1{
-    font-size: 30px;
-    font-weight: 500;
-    margin: 0;
-    margin-left: 4%;
+/* second nav bar */
+.nav2 {
+  position: fixed;
+  top: 8vw;
+  display: flex;
+  padding-left: 16vw;
+  font-size: 2vw;
+  width: 100%;
+  background-color: black;
 }
-.article-card .article-card-overlay{
-    width: 90%;
-    margin: 4%;
-    margin-top: 1%;
+/* adding shading featuer in nav */
+.nav-shade {
+  position: fixed;
+  top: 10vw;
+  width: 100%;
+  height: 2vw;
+  background-color: black;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
-.article-card a{
-    color: red;
+.nav-shade-vaani {
+  position: fixed;
+  top: 8vw;
+  width: 100%;
+  height: 2vw;
+  background-color: black;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
-
-#more {
-    display: none;
+/* different logo css for vaani */
+.logo2 {
+  position: fixed;
+  top: 1vw;
+  left: 3vw;
+  filter: invert(100%);
+  width: 12vw;
 }
-.left h2{
-    margin-top: 0;
-    margin-bottom: 20px;
-    /*  ----------------------------------------------------------------------*/
-    color: #fff;
-    font-weight: 400;
-    font-size: 40px;
-}
-pre {
-    max-width: 100%;
-    white-space: pre-wrap;
-}
-/* weather API */
-.right{
-    /*  ----------------------------------------------------------------------*/
-    background-color: #A0522D;
-    width: 24%;
-    border-radius: 5px;
-    height: 260px;   
-}
-.right .weather-head{
-    padding: 0 12%;
-    /*  ----------------------------------------------------------------------*/
-    color: #fff;
-    font-weight: 200;
-}
-.row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    /*  ----------------------------------------------------------------------*/
-    color: #fff;
-    font-weight: 100;
-}
-
-
-/* galary */
-#gallery-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    grid-gap: 40px;
-    margin-top: 30px;
-}
-#gallery-container img{
-    border-radius: 5px;
-    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
-    width: 100%;
-}
-.no-sky{
-    padding-top: 90px;
-}
-
-/* make it dynamic */
-@media(max-width: 768px){
-    .main{
-        flex-direction: column;
-    }
-    .main .left{
-        width: 100%;
-    }
-    .right{
-        width: 100%;
-        margin-top: 20px;
-    }
-    .right .weather-head{
-        padding: 0 5%;
-    }
-    .row{
-        font-size: 16px;
-    }
-    .left h2{
-        font-size: 30px;
-    }
-    .article-card h1{
-        font-size: 25px;
-    }
-    .article-card img{
-        height: 150px;
-    }
-    .article-card .article-card-overlay{
-        width: 90%;
-        margin: 4%;
-        margin-top: 1%;
-    }
-    .article-card a{
-        color: red;
-    }
- /* changed in mobile */ 
-    
-    .container{
-        padding-top: 100%;
-    }
-    .nav{
-        flex-direction: column;
-    }
-    .nav ul{
-        flex-direction: column;
-    }
-}
-

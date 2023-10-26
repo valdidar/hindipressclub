@@ -1,83 +1,78 @@
-async function load() {
-    const response = await fetch('./data/articles.json');
-    const json = await response.json();
-    console.log(json);
+// note how much has person has scrolled, and transform class left 1/5th of that
+// amount upwards and change style="transform: translate3d(0px, 0px, 0px);" y value
+const parallax = document.getElementsByClassName("left");
+window.addEventListener("scroll", function() {
+  let offset = window.scrollY;
+  parallax[0].style.transform = "translateY(" + offset * -0.2 + "px)";
+});
+const parallax2 = document.getElementsByClassName("left2");
+window.addEventListener("scroll", function() {
+  let offset = window.scrollY;
+  parallax2[0].style.transform = "translateY(" + offset * -0.2 + "px)";
+});
 
-    for (const key in json) {
-        if (json.hasOwnProperty(key)) {
-            const name = json[key].name;
-            const text = json[key].text;
-            const textShort = text.substring(0, 150);
-            const textRest = text.substring(150, text.length);
-            if (json[key].thumbnail) {
-                const thumbnail = json[key].thumbnail;
-                const temp = `
-                <div class="article-card">
-                <h1>${name}</h1>
-                <img src="${thumbnail}" alt="">
-                <div class="article-card-overlay">
-                <pre>${textShort}<span id="dots">...</span><span id="more">${textRest}</span></pre><button onclick="myFunction()" id="myBtn">Read more</button>
-                </div>
-                </div>`;
-                document.querySelector('.left').innerHTML += temp;
-            }
-            else {
-                const temp = `
-                <div class="article-card">
-                <h1>${name}</h1>
-                <div class="article-card-overlay">
-                <pre>${textShort}<span id="dots">...</span><span id="more">${textRest}</span></pre><button onclick="myFunction()" id="myBtn">Read more</button>
-                </div>
-                </div>`;
-                document.querySelector('.left').innerHTML += temp;
-            }
-        }
-    }
-    return json;
-}
-const loadArticles = load();
+// listen to event when person scrolls on area of class "left" and "left2" 
+// and scroll the actual page 3 times that amount
+const left = document.getElementsByClassName("left");
+const left2 = document.getElementsByClassName("left2");
+left[0].addEventListener("wheel", function(e) {
+  window.scrollBy(0, e.deltaY * 3);
+});
+left2[0].addEventListener("wheel", function(e) {
+  window.scrollBy(0, e.deltaY * 3);
+});
 
-function myFunction() {
-    var btnText = event.target;
-    var parent = btnText.parentElement;
-    var p = parent.querySelector('pre');
-    var dots = p.querySelector('#dots');
-    var moreText = p.querySelector('#more');
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read more";
-        moreText.style.display = "none";
-    } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Read less";
-        moreText.style.display = "inline";
+// if clicked on id: wallmag-button or article-button or cartoons-button,
+// then add toggle class "hidden" in id: wallmag-div, article-div, cartoons-div
+// respectively
+const wallmag = document.getElementById("wallmag-button");
+const article = document.getElementById("article-button");
+const cartoons = document.getElementById("cartoons-button");
+const wallmagDiv = document.getElementById("wallmag-div");
+const articleDiv = document.getElementById("article-div");
+const cartoonsDiv = document.getElementById("cartoons-div");
+wallmag.addEventListener("click", function() {
+  if (wallmagDiv.classList.contains("hidden")) {
+    wallmagDiv.classList.toggle("hidden");
+    wallmag.classList.toggle("nava-off");
+    // add class "hidden" in id: article-div and cartoons-div if not there
+    if (!articleDiv.classList.contains("hidden")) {
+      articleDiv.classList.toggle("hidden");
+      article.classList.toggle("nava-off");
     }
-}
-
-const API_KEY = `cf80a364109207afb87c87db050a4ceb`
-const form = document.querySelector("form")
-const search = document.querySelector("#search")
-const weather = document.querySelector("#weather")
-const getWeather = async (city) => {
-    weather.innerHTML = `<h2> Loading... <h2>`
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-    const response = await fetch(url);
-    const data = await response.json()
-    return showWeather(data)
-}
-const showWeather = (data) => {
-    if (data.cod == "404") {
-        weather.innerHTML = `<h2> City Not Found <h2>`
-        return;
+    if (!cartoonsDiv.classList.contains("hidden")) {
+      cartoonsDiv.classList.toggle("hidden");
+      cartoons.classList.toggle("nava-off");
     }
-    weather.innerHTML = `
-        <div>
-            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon">
-        </div>
-        <div>
-            <h2>${data.main.temp} ℃</h2>
-            <h4> ${data.weather[0].main} </h4>
-        </div>
-    `
-}
-getWeather("Pilani")
+  }
+});
+article.addEventListener("click", function() {
+  if (articleDiv.classList.contains("hidden")) {
+    articleDiv.classList.toggle("hidden");
+    article.classList.toggle("nava-off");
+    // add class "hidden" in id: wallmag-div and cartoons-div if not there
+    if (!wallmagDiv.classList.contains("hidden")) {
+      wallmagDiv.classList.toggle("hidden");
+      wallmag.classList.toggle("nava-off");
+    }
+    if (!cartoonsDiv.classList.contains("hidden")) {
+      cartoonsDiv.classList.toggle("hidden");
+      cartoons.classList.toggle("nava-off");
+    }
+  }
+});
+cartoons.addEventListener("click", function() {
+  if (cartoonsDiv.classList.contains("hidden")) {
+    cartoonsDiv.classList.toggle("hidden");
+    cartoons.classList.toggle("nava-off");
+    // add class "hidden" in id: wallmag-div and article-div if not there
+    if (!wallmagDiv.classList.contains("hidden")) {
+      wallmagDiv.classList.toggle("hidden");
+      wallmag.classList.toggle("nava-off");
+    }
+    if (!articleDiv.classList.contains("hidden")) {
+      articleDiv.classList.toggle("hidden");
+      article.classList.toggle("nava-off");
+    }
+  }
+});
