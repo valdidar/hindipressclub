@@ -3,8 +3,14 @@
 const parallax = document.getElementsByClassName("left");
 window.addEventListener("scroll", function() {
   let offset = window.scrollY;
-  parallax[0].style.transform = "translateY(" + offset * -0.2 + "px)";
+  parallax[0].style.transform = "translateY(" + offset * -0.133 + "px)";
 });
+const parallax2 = document.getElementsByClassName("left2");
+window.addEventListener("scroll", function() {
+  let offset = window.scrollY;
+  parallax2[0].style.transform = "translateY(" + offset * -0.133 + "px)";
+});
+
 
 // if clicked on id: wallmag-button or article-button or cartoons-button,
 // then add toggle class "hidden" in id: wallmag-div, article-div, cartoons-div
@@ -33,3 +39,16 @@ cartoons.addEventListener("click", function() {
     }
   }
 });
+
+// listen to event when person scrolls on area of class "left" and "left2" 
+// and scroll the actual page 3 times that amount
+const left = document.getElementsByClassName("left");
+const left2 = document.getElementsByClassName("left2");
+left[0].addEventListener("wheel", function(e) {
+  window.scrollBy(0, e.deltaY * 5);
+});
+left2[0].addEventListener("wheel", function(e) {
+  window.scrollBy(0, e.deltaY * 5);
+});
+
+

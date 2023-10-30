@@ -7,8 +7,8 @@ h1, h2, h3, h4, h5, h6, p, a, hr {
 }
 /* right and left part of the page  */
 .right {
-  padding-left: calc(50% - 64px);
-  width: 50vw;
+  padding-left: 22vw;
+  width: 75vw;
   font-size: 2vw;
   line-height: 3vw;
 }
@@ -17,10 +17,10 @@ h1, h2, h3, h4, h5, h6, p, a, hr {
   top: 0;
   padding-top: 15vw;
   padding-bottom: 100vw;
-  left: calc(40px + 3vw);
+  left: 6vw;
   width: 10vw;
-  font-size: .4vw;
-  line-height: .6vw;
+  font-size: .267vw;
+  line-height: .4vw;
   will-change: transform;
 }
 /* make padding so that the first text appears in middle instead of top */
@@ -28,8 +28,21 @@ h1, h2, h3, h4, h5, h6, p, a, hr {
   padding-top: 15vw;
 }
 .top-padding-article-left {
-  padding-top: 3vw;
+  padding-top: 2vw;
 }
+/* right and left headings */
+
+.right h2{
+  font-size: 3vw;
+  width: 80%;
+  padding-left: 10%;
+}
+.left h2 {
+  font-size: 0.4vw;
+  width: 80%;
+  padding-left: 10%;
+}
+
 /* floating navbar with Articles and Cartoons */
 .nav {
   position: fixed;
@@ -61,7 +74,7 @@ h1, h2, h3, h4, h5, h6, p, a, hr {
   width: 12vw;
 }
 /* css for cartoons page */
-.cartoons img, h3 {
+.cartoons img, h3, h1 {
   width: 80%;
   padding-left: 10%;
   margin-top: 0px;
