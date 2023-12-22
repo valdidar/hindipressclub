@@ -1,0 +1,98 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+nav {
+    border-bottom: 2px solid #565656;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1 {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 5%;
+    font-size: 5vw;
+}
+nav .nav-element {
+    padding: 1%;
+    padding-bottom: 0px;
+    width: 18%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav .nav-element img{
+    width: 65%;
+}
+nav .nav-element a {
+    font-size: 3.5vw;
+}
+img.group-photo {
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 0px;
+}
+.main-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.main-home .main-half{
+    width: 40%;
+    margin: 5%;
+    margin-top: 2.5%;
+}
+.main-home .main-half img {
+    width: 100%;
+}
+.main-home .main-half h1 {
+    font-size: 4vw;
+    color: #D4AF67;
+}
+.main-home .main-half h3 {
+    font-size: 2.5vw;
+}
+.main-home .main-half p {
+    font-size: 1.5vw;
+}
+.golden{
+    color: #D4AF67;
+}
+.links a img {
+    /* invert image */
+    filter: invert(100%);
+}
+.links a {
+    margin: 5%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+.links {
+    display: flex;
+    margin-right: 50%;
+}
+.hidden {
+    display: none;
+}
+button {
+    background-color: #D4AF67;
+    color: black;
+    border-radius: 5px;
+    margin: 40%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 18%;
+    padding: 1%;
+    text-align: center;
+}
