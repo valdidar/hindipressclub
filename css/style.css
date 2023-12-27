@@ -73,14 +73,14 @@ img.group-photo {
     filter: invert(100%);
 }
 .links a {
-    margin: 5%;
+    margin: 10%;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
 }
 .links {
     display: flex;
-    margin-right: 50%;
+    margin-right: 80%;
 }
 .hidden {
     display: none;
@@ -95,4 +95,13 @@ button {
     width: 18%;
     padding: 1%;
     text-align: center;
+}
+
+button:hover{
+    background-color: #c99328;
+}
+@media only screen and (max-width: 600px)  {
+    .links {
+        margin-right: 40%;
+    }
 }
